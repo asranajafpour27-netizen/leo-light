@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f0e7">
+  <meta name="description" content="لئو لایت؛ فروشگاه تخصصی محصولات روشنایی و نورپردازی">
+  <title>لئو لایت | دنیای نور و روشنایی</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ورودی سینمایی چراغ -->
+  <section class="intro-screen" id="introScreen">
+    <div class="intro-brand">LEO <span>LIGHT</span></div>
+
+    <div class="lamp-scene" id="lampScene">
+      <div class="lamp-wire"></div>
+
+      <div class="lamp-shade">
+        <div class="shade-top"></div>
+        <div class="shade-highlight"></div>
+        <div class="shade-rim"></div>
+        <div class="shade-bottom"></div>
+      </div>
+
+      <div class="lamp-glow" id="lampGlow"></div>
+
+      <button class="pull-cord" id="pullCord"
+        type="button" aria-label="کشیدن نخ و روشن کردن چراغ">
+        <span class="cord-string"></span>
+        <span class="cord-handle"></span>
+      </button>
+    </div>
+
+    <p class="intro-hint" id="introHint">
+      نخ چراغ را بکش و وارد دنیای نور شو
+    </p>
+
+    <div class="light-flash" id="lightFlash"></div>
+    <button class="skip-intro" id="skipIntro" type="button">
+      ورود به فروشگاه ←
+    </button>
+  </section>
+
+  <!-- فروشگاه -->
+  <main class="store" id="store" aria-hidden="true">
+
+    <header class="site-header">
+      <a class="logo" href="#home" aria-label="لئو لایت">
+        LEO <span>LIGHT</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle"
+        type="button" aria-label="باز کردن منو"
+        aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#home">صفحه اصلی</a>
+        <a href="#categories">دسته‌بندی محصولات</a>
+        <a href="#products">فروشگاه</a>
+        <a href="#about">درباره ما</a>
+        <a href="#contact">تماس با ما</a>
+      </nav>
+
+      <a class="header-contact" href="#contact">ارتباط با ما</a>
+    </header>
+
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">LEO LIGHT · LIGHTING COLLECTION</span>
+        <h1>نور، هنرِ ساختن فضاست.</h1>
+        <p>
+          مجموعه‌ای از محصولات روشنایی برای فضاهایی
+          که قرار است متفاوت باشند.
+        </p>
+        <a class="gold-button" href="#products">مشاهده محصولات</a>
+      </div>
+      <div class="hero-decoration" aria-hidden="true">
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+        <div class="hero-light"></div>
+      </div>
+    </section>
+
+    <section class="section categories-section" id="categories">
+      <div class="section-heading">
+        <span>انتخاب بر اساس نیاز</span>
+        <h2>دسته‌بندی محصولات</h2>
+        <p>دسته موردنظرت را انتخاب کن.</p>
+      </div>
+      <div class="category-list" id="categoryList">
+        <p class="loading-message">در حال بارگذاری دسته‌بندی‌ها...</p>
+      </div>
+    </section>
+
+    <section class="section products-section" id="products">
+      <div class="section-heading">
+        <span>COLLECTION</span>
+        <h2 id="productsHeading">محصولات لئو لایت</h2>
+        <p>برای مشاهده توضیحات هر محصول، روی کارت آن کلیک کن.</p>
+      </div>
+
+      <div class="product-toolbar" id="productToolbar">
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="productSearch" type="search"
+            placeholder="جست‌وجوی نام یا کد محصول..."
+            aria-label="جست‌وجوی محصولات">
+        </label>
+        <span id="productCount" class="product-count"></span>
+
+<label class="sort-control">
+  <span>مرتب‌سازی:</span>
+  <select id="sortProducts">
+    <option value="default">ترتیب پیش‌فرض</option>
+    <option value="price-asc">ارزان به گران</option>
+    <option value="price-desc">گران به ارزان</option>
+    <option value="name-asc">الفبایی: الف تا ی</option>
+    <option value="name-desc">الفبایی: ی تا الف</option>
+  </select>
+</label>
+
+<div class="price-filter">
+  <input
+    id="minPrice"
+    type="number"
+    min="0"
+    placeholder="حداقل قیمت"
+    aria-label="حداقل قیمت"
+  >
+  <input
+    id="maxPrice"
+    type="number"
+    min="0"
+    placeholder="حداکثر قیمت"
+    aria-label="حداکثر قیمت"
+  >
+</div>
+
+<label class="stock-filter">
+  <input id="inStockOnly" type="checkbox">
+  فقط محصولات موجود
+</label>
+
+<button
+  class="outline-button"
+  id="showFavorites"
+  type="button"
+  aria-pressed="false"
+>
+  ♡ علاقه‌مندی‌ها
+</button>
+
+<button
+  class="outline-button"
+  id="clearFilters"
+  type="button"
+>
+  پاک‌کردن فیلترها
+</button>
+
+      </div>
+
+      <div class="product-grid" id="productList">
+        <p class="loading-message">در حال بارگذاری محصولات...</p>
+      </div>
+
+      <button class="outline-button load-more" id="loadMore" type="button" hidden>
+        نمایش محصولات بیشتر
+      </button>
+    </section>
+
+    <!-- جزئیات هر محصول در همین صفحه نمایش داده می‌شود -->
+    <section class="product-detail-section" id="productDetail" hidden>
+      <div class="detail-toolbar">
+        <button class="outline-button" id="backToProducts" type="button">
+          → بازگشت به محصولات
+        </button>
+      </div>
+
+      <div class="product-detail-layout">
+        <div class="detail-gallery" id="detailGallery"></div>
+        <div class="detail-info">
+          <span class="eyebrow" id="detailCategory">محصول لئو لایت</span>
+          <h1 id="detailName"></h1>
+          <p class="detail-sku" id="detailSku"></p>
+          <p class="detail-stock" id="detailStock"></p>
+          <div class="detail-price" id="detailPrice"></div>
+          <div class="detail-description" id="detailDescription"></div>
+          <a class="gold-button whatsapp-button" id="detailOrder"
+            href="#" target="_blank" rel="noopener noreferrer">
+            سفارش از واتساپ
+          </a>
+        </div>
+      </div>
+
+      <div class="detail-extra">
+        <h2>اطلاعات محصول</h2>
+        <p id="detailExtraText"></p>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-inner">
+        <span class="eyebrow">ABOUT LEO LIGHT</span>
+        <h2>روشنایی، فراتر از نور</h2>
+        <p>
+          لئو لایت؛ مجموعه‌ای برای انتخاب و سفارش محصولات روشنایی.
+          برای دریافت اطلاعات بیشتر درباره محصولات با ما در ارتباط باشید.
+        </p>
+      </div>
+    </section>
+
+    <footer class="site-footer" id="contact">
+      <div class="footer-brand">
+        <a class="logo" href="#home">LEO <span>LIGHT</span></a>
+        <p>دنیای نور و روشنایی</p>
+      </div>
+
+      <div class="footer-contact">
+        <h3>ارتباط با لئو لایت</h3>
+        <p>برای استعلام قیمت و ثبت سفارش با ما تماس بگیرید.</p>
+        <a class="footer-whatsapp" id="footerWhatsApp"
+          href="#" target="_blank" rel="noopener noreferrer">
+          پیام در واتساپ
+        </a>
+      </div>
+
+      <p class="copyright">
+        © لئو لایت — تمامی حقوق محفوظ است.
+      </p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
